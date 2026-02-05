@@ -23,31 +23,3 @@ spec:
             name: {{ .Values.name }}-service
             port:
               number: 80
-
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: argocd-server-ingress
-  namespace: argocd
-  annotations:
-    # Используем новый Issuer
-    cert-manager.io/cluster-issuer: "letsencrypt-gce-dns"
-    networking.gke.io/static-ip-name: "ИМЯ_ВАШЕГО_GLOBAL_IP"
-    kubernetes.io/ingress.class: "gce"
-spec:
-  tls:
-  - hosts:
-    - lmsargocd.ddns.net
-    secretName: argocd-server-tls
-  rules:
-  - host: lmsargocd.ddns.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
