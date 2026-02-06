@@ -23,8 +23,8 @@ spec:
           value: {{ .Values.image | quote }}
         resources:
           requests:
-            memory: {{ .Values.requests.memory}}
-            cpu: {{ .Values.requests.cpu}}
+            memory: {{ .Values.memory.requests}}
+            cpu: {{ .Values.cpu.requests}}
           limits:
-            memory: {{ .Values.limits.memory}}
-            cpu: {{ .Values.limits.cpu}}
+            memory: {{ .Values.memory.limits}}
+            cpu: {{ .Values.cpu.limits}}
