@@ -21,3 +21,10 @@ spec:
         env:
         - name: IMAGE_NAME
           value: {{ .Values.image | quote }}
+        resources:
+          requests:
+            memory: {{ .Values.requests.memory}}
+            cpu: {{ .Values.requests.cpu}}
+          limits:
+            memory: {{ .Values.limits.memory}}
+            cpu: {{ .Values.limits.cpu}}

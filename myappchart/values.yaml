@@ -4,3 +4,9 @@ image: kirzhan/app-argocdtask:dev-v1
 labels: myapp
 host: demoapp.ddns.net
 replicas: 3
+memory:
+ requests: "64Mi"
+ limits: "128Mi"
+cpu:
+ requests: "100m"
+ limits: "200m"
