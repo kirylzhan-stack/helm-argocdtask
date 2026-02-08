@@ -21,6 +21,11 @@ spec:
         env:
         - name: IMAGE_NAME
           value: {{ .Values.image | quote }}
+        - name: SECRET
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.name }}-secret
+              key: secret
         resources:
           requests:
             memory: {{ .Values.memory.requests}}
