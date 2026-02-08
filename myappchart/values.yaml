@@ -1,6 +1,6 @@
 name: webserver
 namespace: app
-image: kirzhan/app-argocdtask:dev-v1.4
+image: kirzhan/app-argocdtask:dev-v1.5
 labels: myapp
 host: demoapp.ddns.net
 replicas: 3
