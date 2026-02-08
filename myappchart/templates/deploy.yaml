@@ -48,8 +48,8 @@ spec:
           limits:
             memory: {{ .Values.memory.limits}}
             cpu: {{ .Values.cpu.limits}}
-        volumes:
-        - name: config-volume
-          configMap:
-            name: nginx-config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
          
